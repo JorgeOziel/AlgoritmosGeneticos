@@ -4,6 +4,7 @@
  */
 package funcionSimple;
 
+import java.util.Random;
 import objetos.Herramientas;
 import objetos.Individuo;
 
@@ -31,8 +32,15 @@ public class Cruza {
                }
                Individuo h1 = new Individuo(g1);
                Individuo h2 = new Individuo(g2);
-               if(h1.getFitness()>h2.getFitness()) return h1;
+               System.out.println("Hijos");
+               Herramientas.imprimirArreglo(h1.getGenotipo());
+               Herramientas.imprimirArreglo(h2.getGenotipo());
+               System.out.println("Fit h1: "+h1.getFenotipo());
+               System.out.println("Fit h2: "+h2.getFenotipo());
+               if(h1.getFenotipo()>h2.getFenotipo()) return h1;
                
                return h2;
     }
+    
+    
 }

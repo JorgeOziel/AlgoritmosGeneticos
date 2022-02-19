@@ -14,9 +14,9 @@ public class Individuo {
     private int fitness;
     
     public Individuo(){
-        this.genotipo = new int[24];
-        this.fenotipo = 0;
-        this.fitness = 0;
+        this.genotipo = Herramientas.generarArreglo(24);
+        calcularFenotipo();
+        calcularFitness();
     }
     
     //creación aleatoria
@@ -38,26 +38,30 @@ public class Individuo {
     public void calcularFitness(){
         this.fitness = 2*(this.getFitness());
     }
+    public void actualizar(){
+        calcularFenotipo();
+        calcularFitness();
+    }
 
     /**
      * @return the genotipo
      */
     public int[] getGenotipo() {
-        return genotipo;
+        return this.genotipo;
     }
 
     /**
      * @return the fenotipo
      */
     public int getFenotipo() {
-        return fenotipo;
+        return this.fenotipo;
     }
 
     /**
      * @return the fitness
      */
     public int getFitness() {
-        return fitness;
+        return this.fitness;
     }
     
 }

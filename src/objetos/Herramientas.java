@@ -21,7 +21,6 @@ public class Herramientas {
         return aux;
     }
     public static int[] generarMascara1punto (int j, int n){
-        
         int[] aux = new int[j];
         for(int x=0;x<n;x++){
             aux[x] = 1;
