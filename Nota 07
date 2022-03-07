@@ -17,3 +17,32 @@ i2  1 2 3 0   (M)
 Consideramos un sistema de intercambios
 Validación
 -Cruzar
+
+///////////MUTA
+  2 posiciones -> Aleatorias
+  
+  CREAR UN MÉTODO PARA VALIDAD GENOTIPOS
+  CRUZA
+  MUTA
+  
+  //Cómo programarlo
+  public void validacion(int[] genotipo)
+  {
+    int i;
+    ArrayList<> auxiliar = new ArrayList();
+    auxiliar.add(genotipo[0]);
+    for(i=1; i<genotipo.lenght;i++){
+      if(auxiliar.contain(genotipo[i]))
+      {
+        System.out.println("No válido");
+        break;
+      }
+      else auxiliar.add(genotipo[i]);
+    }
+    
+    if(i == genotipo.lenght-1 && genotipo[0] == genotipo.lenght[genotipo.lenght-1]){
+      System.out.println("Sí es válido");
+    }
+    else System.out.println("No es válido");
+    
+  }
