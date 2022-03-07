@@ -1,0 +1,19 @@
+¿Selección?
+-Torneo
+-Aleatorio
+
+Cruza
+-Restricción
+-Ciudad inicial
+-No se repitan
+
+*No considerar la posición inicial
+
+[1101]
+
+i1  0 1 3 2   (B)
+i2  1 2 3 0   (M)
+
+Consideramos un sistema de intercambios
+Validación
+-Cruzar
