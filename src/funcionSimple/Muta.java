@@ -25,4 +25,8 @@ public class Muta {
         //actualizar el fenotipo y el fitness
         i.actualizar();
     }
+
+    static boolean evaluarMuta(double prob) {
+        return Math.random()<=prob;
+    }
 }

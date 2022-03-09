@@ -36,7 +36,7 @@ public class Individuo {
         this.fenotipo = suma;
     }
     public void calcularFitness(){
-        this.fitness = 2*(this.getFitness());
+        this.fitness = 2*(this.fenotipo);
     }
     public void actualizar(){
         calcularFenotipo();
