@@ -30,6 +30,23 @@ public class Herramientas {
         }
         return aux;
     }
+    public static int[] generarArreglo(int ci, int nc){
+        int[] aux = new int[nc];
+        ArrayList<Integer> control = new ArrayList();
+        aux[0] = ci;
+        control.add(ci);
+        int num;
+        Random r = new Random();
+        // Agregar las ciudades por visitar en posiciones aleatorias
+        for(int x=1;x<nc;x++){
+           do{
+               num = r.nextInt(nc);
+           }while(control.contains(num));
+           aux[x] = num;   
+           control.add(num);
+        } 
+        return aux;
+    }
     public static int[] generarMascara1punto (int j, int n){
         int[] aux = new int[j];
         for(int x=0;x<n;x++){
@@ -54,17 +71,22 @@ public class Herramientas {
         return aux;
     }
     
-    public int[][] crearMatriz(int min, int max, int tam){
+    public static int[][] crearMatriz(int min, int max, int tam){
         Random random = new Random();
         int matriz[][] = new int[tam][tam];
         for(int i=0; i<tam;i++){
-            for(int j=0; j<tam; j++){
-                matriz[i][j]= (int) (random.nextInt(max + min) + min);
+            for(int j=i; j<tam; j++){
+                if(i==j) matriz[i][j]=0;
+                else{
+                    matriz[i][j] = (int) (random.nextInt(max + min) + min);
+                    matriz[j][i] = matriz[i][j];
+                }
             }
         }
         return matriz;
     }
-    public void guardarMatriz(int[][] matriz) throws IOException{
+    
+    public static void guardarMatriz(int[][] matriz, String nombre) throws IOException{
         System.out.println("AVISO");
         String cadena = "";
         for(int i=0;i<matriz.length;i++){
@@ -75,13 +97,13 @@ public class Herramientas {
             cadena+="\n";
         }
         System.out.println("AVISO");
-        String path = "C:\\Users\\oziel\\OneDrive\\Documentos\\NetBeansProjects//Matrices//Hola.txt";
+        String path = "C:\\Users\\oziel\\OneDrive\\Documentos\\NetBeansProjects//Matrices//"+nombre;
         System.out.println("AVISO");
         Files.write(Paths.get(path), cadena.getBytes());
         System.out.println("AVISO");
     }
     
-    public int[][] abrirFile() throws IOException {
+    public static int[][] abrirFile() throws IOException {
      String texto, aux;
      LinkedList<String> lista = new LinkedList();
      int tam;

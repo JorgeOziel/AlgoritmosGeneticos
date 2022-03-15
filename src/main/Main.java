@@ -13,29 +13,24 @@ import herramientas.crearGrafica;
 import java.io.IOException;
 import java.util.ArrayList;
 import objetos.Herramientas;
-import objetos.Individuo;
+import tsp.Individuo;
+import tsp.Matriz;
 
 /**
  *
  * @author oziel
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) throws IOException {
-        Herramientas h = new Herramientas();
-        h.guardarMatriz(h.crearMatriz(0, 10, 5));
-        int[][] matriz = h.abrirFile();
-        String aux ="";
-        for(int i=0;i<matriz.length;i++){
-            for(int j=0; j<matriz.length;j++){
-                aux+=matriz[i][j];
-            }
-            aux+="\n";
-        }
-        System.out.println(aux);
+        Matriz.matrizDistancias = new int[][]{{0,34,6,12},
+                                              {34,0,40,8},
+                                              {6,40,0,7},
+                                              {12,8,7,0}};
+        
+        Individuo aux = new Individuo(new int[]{3,1,2,0});
+        System.out.println(aux.getFitness());
+        
         //crearGrafica cG = new crearGrafica(1000,20,0.1);
         //cG.crearGrafica();
         /*
